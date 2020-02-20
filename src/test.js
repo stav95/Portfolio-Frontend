@@ -7,8 +7,11 @@ export default class Test extends Component {
     super();
     this.state = {
       list_name: "",
-      list_items: []
+      list_items: [],
+      new_item: ""
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount = () => {
@@ -20,6 +23,10 @@ export default class Test extends Component {
       });
     });
   };
+
+  handleChange(event) {
+    this.setState({ new_item: event.target.value });
+  }
 
   render() {
     let list_items = this.state.list_items;
@@ -41,14 +48,19 @@ export default class Test extends Component {
             </form>
           ))}
 
-          <form class="item" action="/" method="post">
+          <form class="item" action="/todo-list" method="post">
             <input
               type="text"
-              name="newItem"
+              name="new_item"
               placeholder="New Item"
               autocomplete="off"
+              onChange={this.handleChange}
             />
-            <button type="submit" name="list" value={list_name}>
+            <button
+              type="submit"
+              name="list"
+              value={list_name}
+            >
               +
             </button>
           </form>

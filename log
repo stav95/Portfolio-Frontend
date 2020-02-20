@@ -9,3 +9,5 @@ Initialize git on GitHub:
 "proxy": "http://localhost:5000" - if route cannot be found the request will move automatically to the proxy server.
 
 * axios
+.get(url)
+.post(url, { data })
