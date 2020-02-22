@@ -1,0 +1,146 @@
+import {
+  getList as API_getList,
+  addNewItem as API_addNewItem,
+  deleteItem as API_deleteItem,
+  changeCheckbox as API_changeCheckbox
+} from "./API";
+
+import React, { Component } from "react";
+import Checkbox from "@material-ui/core/Checkbox";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+import "./main.css";
+import trash_64 from "./trash_64.png";
+
+export default class ToDoList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      list_name: "",
+      list_items: [],
+      new_item: ""
+    };
+
+    this.handleChangeAddItem = this.handleChangeAddItem.bind(this);
+    this.handleChangeListName = this.handleChangeListName.bind(this);
+    this.handleChangeCheckbox = this.handleChangeCheckbox.bind(this);
+
+    this.addNewItem = this.addNewItem.bind(this);
+  }
+
+  getList() {
+    API_getList(this.state.list_name, res => this.handleNewData(res));
+  }
+
+  addNewItem() {
+    API_addNewItem(this.state.list_name, this.state.new_item, res =>
+      this.handleNewData(res)
+    );
+  }
+
+  deleteItem(item_id) {
+    API_deleteItem(this.state.list_name, item_id, res =>
+      this.handleNewData(res)
+    );
+  }
+
+  handleNewData(res) {
+    if (res && res.data && res.data !== "") {
+      this.setState({
+        list_items: res.data.list_items
+      });
+    }
+  }
+
+  handleChangeAddItem(event) {
+    this.setState({
+      new_item: event.target.value
+    });
+  }
+
+  handleChangeListName(event) {
+    this.setState(
+      {
+        list_name: event.target.value
+      },
+      this.getList
+    );
+  }
+
+  handleChangeCheckbox(event) {
+    API_changeCheckbox(this.state.list_name, event.target.id, res =>
+      this.handleNewData(res)
+    );
+  }
+
+  render() {
+    const theme = createMuiTheme({
+      palette: {
+        primary: { main: "#a683e3" /*purple[500]*/ } // Purple and green play nicely together.
+      },
+      typography: { useNextVariants: true }
+    });
+
+    let list_items = this.state.list_items;
+    let list_name = this.state.list_name;
+
+    return (
+      <div>
+        <div className="box" id="heading">
+          <input
+            type="text"
+            className="list-name"
+            name="new_item"
+            placeholder="Search (e.g Food)"
+            value={list_name}
+            autoComplete="off"
+            onChange={this.handleChangeListName}
+          />
+        </div>
+        <div className="box">
+          {list_items.map((item, idx) => (
+            <div>
+              <div className="item">
+                <MuiThemeProvider theme={theme}>
+                  <Checkbox
+                    id={item.item.id}
+                    onChange={this.handleChangeCheckbox}
+                    checked={item.item.completed}
+                    color="primary"
+                  ></Checkbox>
+                </MuiThemeProvider>
+                <p
+                  className={
+                    item.item.completed ? "completed" : "not-completed"
+                  }
+                >
+                  {item.item.value}
+                </p>
+                <div className="img-wrapper">
+                  <img
+                    src={trash_64}
+                    onClick={() => this.deleteItem(item.item.id)}
+                  />
+                </div>
+              </div>
+              <input type="hidden" name="listName" value={list_name}></input>
+            </div>
+          ))}
+
+          <div className="item">
+            <input
+              type="text"
+              name="new_item"
+              placeholder="New Item"
+              autoComplete="off"
+              onChange={this.handleChangeAddItem}
+            />
+            <button type="button" onClick={this.addNewItem}>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}

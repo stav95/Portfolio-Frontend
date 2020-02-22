@@ -5,9 +5,19 @@ html {
   font-family: "helvetica neue";
 }
 
-h1 {
+.list-name {
   color: #fff;
   padding: 0.6rem;
+  min-height: 2.5rem;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.list-name::placeholder {
+  color: #fff;
+  opacity: 0.75;
+  font-size: 1.25rem;
+  font-weight: normal;
 }
 
 .box {
@@ -30,17 +40,29 @@ h1 {
   border-bottom: 1px solid #f1f1f1;
 }
 
+.item .img-wrapper {
+  width: 100%;
+  text-align: right;
+}
+
+.item img {
+  width: 2.5rem;
+  margin-right: 1rem;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+
 .item:last-child {
   border-bottom: 0;
 }
 
-input:checked + p {
-  text-decoration: line-through;
-  text-decoration-color: #a683e3;
+p.not-completed {
+  text-decoration: none;
 }
 
-input[type="checkbox"] {
-  margin: 1.5rem;
+p.completed {
+  text-decoration: line-through;
+  text-decoration-color: #a683e3;
 }
 
 p {
@@ -68,6 +90,10 @@ button {
   border-color: transparent;
 }
 
+button:focus {
+  outline: 0;
+}
+
 input[type="text"] {
   text-align: center;
   height: fit-content;
@@ -76,7 +102,7 @@ input[type="text"] {
   background: transparent;
   font-size: 1.25rem;
   font-weight: 200;
-  width: 19rem;
+  width: 21.25rem;
 }
 
 input[type="text"]:focus {
