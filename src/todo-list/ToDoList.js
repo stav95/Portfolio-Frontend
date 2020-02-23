@@ -9,12 +9,13 @@ import React, { Component } from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import "./main.css";
+import styles from "./todo_list.module.css";
 import trash_64 from "./trash_64.png";
 
 export default class ToDoList extends Component {
   constructor() {
     super();
+
     this.state = {
       list_name: "",
       list_items: [],
@@ -74,6 +75,8 @@ export default class ToDoList extends Component {
   }
 
   render() {
+    document.getElementById("root_html").className = styles.html;
+
     const theme = createMuiTheme({
       palette: {
         primary: { main: "#a683e3" /*purple[500]*/ } // Purple and green play nicely together.
@@ -85,22 +88,22 @@ export default class ToDoList extends Component {
     let list_name = this.state.list_name;
 
     return (
-      <div>
-        <div className="box" id="heading">
-          <input
-            type="text"
-            className="list-name"
-            name="new_item"
-            placeholder="Search (e.g Food)"
-            value={list_name}
-            autoComplete="off"
-            onChange={this.handleChangeListName}
-          />
+      <div className={styles.page_bg}>
+        <div className={styles.box} id="heading">
+            <input
+              type="text"
+              className={[styles.input_text, styles.list_name].join(' ')}
+              name="new_item"
+              placeholder="Search (e.g Food)"
+              value={list_name}
+              autoComplete="off"
+              onChange={this.handleChangeListName}
+            />
         </div>
-        <div className="box">
+        <div className={styles.box}>
           {list_items.map((item, idx) => (
             <div>
-              <div className="item">
+              <div className={styles.item}>
                 <MuiThemeProvider theme={theme}>
                   <Checkbox
                     id={item.item.id}
@@ -111,12 +114,14 @@ export default class ToDoList extends Component {
                 </MuiThemeProvider>
                 <p
                   className={
-                    item.item.completed ? "completed" : "not-completed"
+                    item.item.completed
+                      ? styles.completed
+                      : styles.not_completed
                   }
                 >
                   {item.item.value}
                 </p>
-                <div className="img-wrapper">
+                <div className={styles.img_wrapper}>
                   <img
                     src={trash_64}
                     onClick={() => this.deleteItem(item.item.id)}
@@ -127,9 +132,10 @@ export default class ToDoList extends Component {
             </div>
           ))}
 
-          <div className="item">
+          <div className={styles.item}>
             <input
               type="text"
+              className={styles.input_text}
               name="new_item"
               placeholder="New Item"
               autoComplete="off"

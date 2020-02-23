@@ -1,0 +1,27 @@
+.box {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  background: rgb(233, 233, 233);
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+}
+
+.input_search {
+  text-align: center;
+  height: fit-content;
+  border: none;
+  font-size: 1rem;
+  font-weight: 200;
+  width: 21.25rem;
+  height: 2.5rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  background: white;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 0.75;
+}

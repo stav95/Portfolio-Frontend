@@ -1,20 +1,20 @@
-html {
+.html {
   background-color: #e4e9fd;
   background-image: -webkit-linear-gradient(110deg, #a683e3 50%, #e4e9fd 50%);
   min-height: 100%;
   font-family: "helvetica neue";
 }
 
-.list-name {
-  color: #fff;
-  padding: 0.6rem;
+.list_name {
+  color: black;
+  margin: 0.6rem;
   min-height: 2.5rem;
   font-size: 1.5rem !important;
   font-weight: bold !important;
 }
 
-.list-name::placeholder {
-  color: #fff;
+.list_name::placeholder {
+  color: grey;
   opacity: 0.75;
   font-size: 1.25rem;
   font-weight: normal;
@@ -40,7 +40,7 @@ html {
   border-bottom: 1px solid #f1f1f1;
 }
 
-.item .img-wrapper {
+.item .img_wrapper {
   width: 100%;
   text-align: right;
 }
@@ -56,7 +56,7 @@ html {
   border-bottom: 0;
 }
 
-p.not-completed {
+p.not_completed {
   text-decoration: none;
 }
 
@@ -94,7 +94,7 @@ button:focus {
   outline: 0;
 }
 
-input[type="text"] {
+.input_text{
   text-align: center;
   height: fit-content;
   top: 0.75rem;
@@ -105,7 +105,7 @@ input[type="text"] {
   width: 21.25rem;
 }
 
-input[type="text"]:focus {
+.input_text:focus {
   outline: none;
   box-shadow: inset 0 -3px 0 0 #a683e3;
 }
