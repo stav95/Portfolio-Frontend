@@ -10,12 +10,12 @@
 
 .box {
   position: absolute;
-  top: 0;
+  top: 5rem;
   bottom: 0;
   right: 0;
   left: 0;
   margin: auto;
-  height: 90%;
+  height: calc(100% - 5rem);
   width: 70%;
   background: white;
   border-radius: 0.35rem;
