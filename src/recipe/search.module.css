@@ -9,8 +9,8 @@
   background: white;
 }
 
-.input_search:focus{
-    outline: none;
+.input_search:focus {
+  outline: none;
 }
 
 ::placeholder {
@@ -32,13 +32,14 @@
   height: 100%;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  user-select: none;
+  cursor: pointer;
 }
 
-.search_text{
-    position: absolute;
-    right: 0;
-    left: 0;
-    color: white;
-    font-weight: 500;
+.search_text {
+  position: absolute;
+  right: 0;
+  left: 0;
+  color: white;
+  font-weight: 500;
 }
-

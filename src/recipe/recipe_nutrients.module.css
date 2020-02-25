@@ -1,0 +1,17 @@
+.title{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.table_nutrients {
+  width: 90%;
+  margin: auto;
+  margin-top: 0.5rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+.table_nutrients tr:first-child {
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}

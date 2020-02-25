@@ -1,0 +1,43 @@
+.row {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.row.selected {
+  background: rgb(245, 243, 241);
+  animation-name: selectAnim;
+  /* duration connects to timeout */
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.circle_img {
+  border-radius: 50%;
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.label {
+  text-align: left;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+
+.label.selected {
+  font-weight: 500;
+  font-style: italic;
+}
+
+@keyframes selectAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

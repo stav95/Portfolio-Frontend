@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import ToDoList from "./todo-list/ToDoList";
-import Recipe from "./recipe/Recipe";
-import Search from "./recipe/Search";
+import Recipe from "./recipe/Recipe.jsx";
+// import Search from "./recipe/Search";
 
 import axios from "axios";
 
@@ -17,7 +17,7 @@ function test() {
 function App() {
   return (
     <div id="root" className="App">
-      <button onClick={() => test()}> </button>
+      {/* <button onClick={() => test()}> </button> */}
       <Recipe></Recipe>
       {/* <ToDoList></ToDoList> */}
       {/* <Search></Search> */}
