@@ -2,23 +2,16 @@
   display: flex;
   align-items: center;
   text-align: left;
-  padding-left: 1.5rem;
-  transition: padding-left 1s, border-left 0.2s;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 1s, padding-left 1s, border-left 0.2s;
+  opacity: 0.8;
 }
 
 .container:hover {
+  background-color: #fafafa;
   padding-left: 2rem;
+  opacity: 1;
   border-left: 3px solid black;
-}
-
-@keyframes selectAnim {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  font-weight: 500;
+  cursor: pointer;
 }

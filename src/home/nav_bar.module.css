@@ -1,18 +1,21 @@
 * {
-    /* font-family: "Roboto", sans-serif; */
+  /* font-family: "Roboto", sans-serif; */
 }
 
 .name_container {
   background-color: #fafafa;
   text-align: left;
   padding: 2rem;
-  margin-bottom: 1rem;
   border-bottom: 1px solid #ddd;
+  opacity: 0.9;
+  transition: background-color 1s;
 }
 
 .name_container:hover {
   background-color: #f8f6f6;
   cursor: pointer;
+  font-weight: 400;
+  opacity: 1;
 }
 
 .name_text {

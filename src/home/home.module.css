@@ -1,0 +1,72 @@
+.nav_bar {
+  position: fixed;
+  width: 12rem;
+  height: 100%;
+  border-collapse: collapse;
+  border-right: 1px solid #dddddd;
+}
+
+.image_bg {
+  background-image: url("./bg.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.quote_container {
+  position: absolute;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+.quote_container .text {
+  text-align: left;
+  font-weight: 500;
+  font-size: 2.75rem;
+  padding-top: 1rem;
+  color: white;
+}
+
+.quote_mark {
+  background-color: #008073;
+  padding: 0rem 1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.quote_underline {
+  border-bottom: 0.4rem solid #009688;
+}
+
+.section_display {
+  height: 6rem;
+  background-color: #008073;
+  display: flex;
+  align-items: center;
+}
+
+.section_display_text {
+  margin-left: 2.5rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: default;
+}
+
+.active {
+  background-color: #fafafa;
+  padding-left: 2rem;
+  opacity: 1;
+  border-left: 3px solid black;
+  font-weight: 500;
+  cursor: pointer;
+}
