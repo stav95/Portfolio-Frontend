@@ -1,21 +1,37 @@
 import React, { Component } from "react";
 
 import styles from "./result_recipe.module.css";
-// import cx from "classnames";
+
+import "react-perfect-scrollbar/dist/css/styles.css";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
 export default class ResultRecipe extends Component {
   constructor(props) {
     super();
 
     this.state = {
-      image: props.image,
       label: props.label,
+      url: props.url,
+      image: props.image,
       healthGains: props.healthGains,
       calories: props.calories,
       totalWeight: props.totalWeight,
       totalTime: props.totalTime,
       ingredients: props.ingredients
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      label: nextProps.label,
+      url: nextProps.url,
+      image: nextProps.image,
+      healthGains: nextProps.healthGains,
+      calories: nextProps.calories,
+      totalWeight: nextProps.totalWeight,
+      totalTime: nextProps.totalTime,
+      ingredients: nextProps.ingredients
+    });
   }
 
   render() {
@@ -52,7 +68,11 @@ export default class ResultRecipe extends Component {
             );
           })}
           <div style={{ textAlign: "center" }}>
-            <a className={styles.instructions} href="#">
+            <a
+              className={styles.instructions}
+              href={this.state.url}
+              target="_blank"
+            >
               Instructions
             </a>
           </div>

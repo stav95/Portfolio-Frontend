@@ -2,25 +2,14 @@ import React from "react";
 import "./App.css";
 import ToDoList from "./todo-list/ToDoList";
 import Recipe from "./recipe/Recipe.jsx";
-// import Search from "./recipe/Search";
-
-import axios from "axios";
-
-function test() {
-  alert("STARTING");
-  axios.get("/recipe-finder").then(res => {
-    alert("Finish");
-    console.log(res);
-  });
-}
+import Home from "./home/Home";
 
 function App() {
   return (
     <div id="root" className="App">
-      {/* <button onClick={() => test()}> </button> */}
-      <Recipe></Recipe>
+      {/* <Recipe></Recipe> */}
       {/* <ToDoList></ToDoList> */}
-      {/* <Search></Search> */}
+      <Home></Home>
     </div>
   );
 }

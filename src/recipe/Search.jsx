@@ -26,6 +26,11 @@ export default class Search extends Component {
           className={styles.input_search}
           placeholder="Search over Million recipes!"
           onChange={this.handleQueryChange}
+          onKeyUp={event => {
+            if (event.keyCode === 13) {
+              this.state.onClick(this.state.query);
+            }
+          }}
         ></input>
         <div
           className={styles.search_box}

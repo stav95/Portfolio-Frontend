@@ -8,6 +8,9 @@ import RecipeNutrients from "./RecipeNutrients";
 
 import axios from "axios";
 
+import "react-perfect-scrollbar/dist/css/styles.css";
+import PerfectScrollbar from "react-perfect-scrollbar";
+
 export default class Recipe extends Component {
   constructor() {
     super();
@@ -22,9 +25,10 @@ export default class Recipe extends Component {
   }
 
   makeNewRequest(query) {
-    alert(query);
     const params = new URLSearchParams();
     params.append("query", query);
+
+    document.getElementById("loading_search").style.display = "";
 
     axios({
       method: "POST",
@@ -32,14 +36,27 @@ export default class Recipe extends Component {
       data: params
     })
       .then(result => {
-        alert("done!");
-        console.log(result);
-        console.log(result.data[0]["label"]);
+        document.getElementById("loading_search").style.display = "none";
+
+        let changeIndex = false;
+
+        if (
+          result != null &&
+          result.data != null &&
+          result.data.length > 0 &&
+          this.state.indexSelected === -1
+        ) {
+          changeIndex = true;
+        }
+
         this.setState({
-          recipes: result.data
+          recipes: result.data,
+          indexSelected: changeIndex ? 0 : this.state.indexSelected
         });
       })
-      .catch(err => {});
+      .catch(err => {
+        document.getElementById("loading_search").style.display = "none";
+      });
   }
 
   onClickRecipe(index) {
@@ -64,22 +81,27 @@ export default class Recipe extends Component {
           ></RecipeTopBar>
           <div style={{ width: "100%", height: "100%", display: "flex" }}>
             <div style={{ width: "25%", height: "100%", background: "white" }}>
-              {this.state.recipes.map((recipe, idx) => {
-                return (
-                  <RowResultRecipe
-                    key={idx}
-                    label={recipe.label}
-                    image={recipe.image}
-                    healthGains={recipe.healthLabels}
-                    ingredients={recipe.ingredientLines}
-                    calories={recipe.calories}
-                    selected={
-                      idx == this.state.indexSelected ? "true" : "false"
-                    }
-                    onClickRecipe={() => this.onClickRecipe(idx)}
-                  ></RowResultRecipe>
-                );
-              })}
+              <PerfectScrollbar>
+                <div style={{ marginBottom: "1rem" }}>
+                  {this.state.recipes.map((recipe, idx) => {
+                    return (
+                      <RowResultRecipe
+                        key={idx}
+                        rowIndex={idx}
+                        label={recipe.label}
+                        image={recipe.image}
+                        healthGains={recipe.healthLabels}
+                        ingredients={recipe.ingredientLines}
+                        calories={recipe.calories}
+                        selected={
+                          this.state.indexSelected == idx ? "true" : "false"
+                        }
+                        onClickRecipe={() => this.onClickRecipe(idx)}
+                      ></RowResultRecipe>
+                    );
+                  })}
+                </div>
+              </PerfectScrollbar>
             </div>
             <div
               style={{
@@ -88,21 +110,28 @@ export default class Recipe extends Component {
                 background: "rgb(245, 243, 241)"
               }}
             >
-              {r !== null ? (
-                <ResultRecipe
-                  label={r.label}
-                  image={r.image}
-                  healthGains={r.healthLabels}
-                  calories={r.calories}
-                  ingredients={r.ingredientLines}
-                ></ResultRecipe>
-              ) : (
-                ""
-              )}
+              <PerfectScrollbar>
+                {r !== null ? (
+                  <ResultRecipe
+                    label={r.label}
+                    url={r.url}
+                    image={r.image}
+                    healthGains={r.healthLabels}
+                    calories={r.calories}
+                    ingredients={r.ingredientLines}
+                  ></ResultRecipe>
+                ) : (
+                  ""
+                )}
+              </PerfectScrollbar>
             </div>
             <div style={{ width: "25%", height: "100%", background: "white" }}>
               {r !== null ? (
-                <RecipeNutrients nutrients={r.totalNutrients}></RecipeNutrients>
+                <PerfectScrollbar>
+                  <RecipeNutrients
+                    nutrients={r.totalNutrients}
+                  ></RecipeNutrients>
+                </PerfectScrollbar>
               ) : (
                 ""
               )}

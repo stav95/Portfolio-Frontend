@@ -6,6 +6,12 @@
   background: rgb(245, 243, 241);
 }
 
+.title_image_container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
 .input_search {
   text-align: center;
   height: fit-content;

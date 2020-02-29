@@ -11,6 +11,12 @@ export default class RecipeNutrients extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      nutrients: nextProps.nutrients
+    });
+  }
+
   render() {
     let nut = this.state.nutrients;
     let keys = Object.keys(this.state.nutrients);
@@ -18,7 +24,7 @@ export default class RecipeNutrients extends Component {
     return (
       <div>
         <p className={styles.title}>Nutrients</p>
-        <div>
+        <div style={{ marginBottom: "2rem" }}>
           <table className={styles.table_nutrients}>
             <tr>
               <td>Label</td>
@@ -27,7 +33,6 @@ export default class RecipeNutrients extends Component {
             </tr>
             {keys.map((key, idx) => {
               return (
-                  
                 <tr key={idx}>
                   <td>{nut[key]["label"]}</td>
                   <td>{parseFloat(nut[key]["quantity"]).toFixed(2)}</td>

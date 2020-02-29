@@ -5,8 +5,9 @@ import styles from "./row_result_recipe.module.css";
 export default class RowResultRecipe extends Component {
   constructor(props) {
     super();
-    console.log("LOG - " + props.selected);
+
     this.state = {
+      rowIndex: props.rowIndex,
       label: props.label,
       image: props.image,
       selected: props.selected,
@@ -16,10 +17,20 @@ export default class RowResultRecipe extends Component {
     this.selectRecipe = this.selectRecipe.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      rowIndex: nextProps.rowIndex,
+      label: nextProps.label,
+      image: nextProps.image,
+      selected: nextProps.selected,
+      onClickRecipe: nextProps.onClickRecipe
+    });
+  }
+
   selectRecipe() {
     this.setState(
       {
-        selected: "false"
+        selected: this.state.selected
       },
       this.state.onClickRecipe
     );
@@ -29,7 +40,7 @@ export default class RowResultRecipe extends Component {
     return (
       <div>
         <div
-          onClick={() => this.selectRecipe()}
+          onClick={() => this.state.onClickRecipe(this.state.rowIndex)}
           className={[
             styles.row,
             this.state.selected == "true" ? styles.selected : ""
