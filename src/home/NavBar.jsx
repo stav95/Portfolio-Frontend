@@ -41,21 +41,28 @@ class NavBar extends Component {
           color="#9c27b0"
         ></NavBarRow>
         <NavBarRow
-          id="row_3"
+          id="row_4"
           section="#education"
           image="school"
           text="Education"
           color="#00bcd4"
         ></NavBarRow>
         <NavBarRow
-          id="row_4"
+          id="row_5"
+          section="#army"
+          image="home"
+          text="Army"
+          color="#fbc02d"
+        ></NavBarRow>
+        <NavBarRow
+          id="row_6"
           section="#contact"
           image="mail"
           text="Contact"
           color="#F44336"
         ></NavBarRow>
         <NavBarRow
-          id="row_5"
+          id="row_7"
           section="#resume"
           image="description"
           text="Resume"
