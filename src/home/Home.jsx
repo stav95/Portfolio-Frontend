@@ -3,6 +3,8 @@ import NavBar from "./NavBar";
 
 import $ from "jquery";
 import styles from "./home.module.css";
+import About from "./About";
+import Projects from "./Projects";
 
 class Home extends Component {
   constructor(props) {
@@ -12,11 +14,13 @@ class Home extends Component {
 
   componentDidMount() {
     function currentSection(elem) {
-      return $(window).scrollTop() >= $(elem).offset().top;
+      return $(window).scrollTop() + 100 >= $(elem).offset().top;
     }
 
     $(window).scroll(function() {
-      if (currentSection($("#projects"))) {
+      if (currentSection($("#skills"))) {
+        addActive(3);
+      } else if (currentSection($("#projects"))) {
         addActive(2);
       } else if (currentSection($("#about"))) {
         addActive(1);
@@ -77,15 +81,114 @@ class Home extends Component {
             <div className={styles.section_display}>
               <span className={styles.section_display_text}>ABOUT</span>
             </div>
-
-            <span></span>
+            <div className={styles.bg}>
+              <About></About>
+            </div>
           </section>
 
           <section id="projects">
             <div className={styles.section_display}>
               <span className={styles.section_display_text}>PROJECTS</span>
             </div>
-            <span></span>
+            <div className={styles.bg}>
+              <Projects></Projects>
+            </div>
+          </section>
+
+          <section id="skills">
+            <div className={styles.section_display}>
+              <span className={styles.section_display_text}>SKILLS</span>
+            </div>
+            <div className={styles.bg}>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+              <div>ss</div>
+            </div>
           </section>
         </div>
       </div>

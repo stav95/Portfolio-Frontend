@@ -7,7 +7,7 @@
 }
 
 .image_bg {
-  background-image: url("./bg.jpg");
+  background-image: url("./my_image.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,4 +69,118 @@
   border-left: 3px solid black;
   font-weight: 500;
   cursor: pointer;
+}
+
+.bg {
+  background-image: url("./bg.png");
+  background-repeat: repeat;
+}
+
+.about_text_container {
+  max-width: 70%;
+  padding: 4rem 0rem;
+  text-align: left;
+}
+
+.flow_text {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+@media only screen and (min-width: 500px) {
+  .about_text_container {
+    margin-left: 4rem;
+  }
+  .flow_text {
+    font-size: 1.34rem;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .about_text_container {
+    margin-left: 4.6rem;
+  }
+  .flow_text {
+    font-size: 1.381rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .about_text_container {
+    margin-left: 5.2rem;
+  }
+  .flow_text {
+    font-size: 1.422rem;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .about_text_container {
+    margin-left: 5.8rem;
+  }
+  .flow_text {
+    font-size: 1.463rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .about_text_container {
+    margin-left: 6.4rem;
+  }
+  .flow_text {
+    font-size: 1.504rem;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .about_text_container {
+    margin-left: 7rem;
+  }
+  .flow_text {
+    font-size: 1.545rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .about_text_container {
+    margin-left: 7.5rem;
+  }
+  .flow_text {
+    font-size: 1.586rem;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .about_text_container {
+    margin-left: 8rem;
+  }
+  .flow_text {
+    font-size: 1.627rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .about_text_container {
+    margin-left: 8.5rem;
+  }
+  .flow_text {
+    font-size: 1.668rem;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .about_text_container {
+    margin-left: 9rem;
+  }
+  .flow_text {
+    font-size: 1.709rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .about_text_container {
+    margin-left: 10rem;
+  }
+  .flow_text {
+    font-size: 1.75rem;
+  }
 }

@@ -28,9 +28,26 @@ A simple JavaScript utility for conditionally joining classNames together.
 
 * npm install jquery
 
+* npm i react-ripples
+
+* npm i react-card-flip
+
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <span class="material-icons">face</span>
 https://material.io/resources/icons/?style=baseline
+
+<link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500"
+    rel="stylesheet"
+    type="text/css"
+/>
+
+<!-- Materialize - Compiled and minified CSS-->
+<link
+    rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"
+/>
 
 Extensions:
 Simple React Snippets

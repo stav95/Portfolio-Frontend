@@ -95,7 +95,7 @@ button:focus {
 }
 
 .input_text{
-  text-align: center;
+  text-align: center; 
   height: fit-content;
   top: 0.75rem;
   border: none;
