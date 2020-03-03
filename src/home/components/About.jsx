@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "./home.module.css";
+import styles from "../css/home.module.css";
 
 class About extends Component {
   constructor(props) {

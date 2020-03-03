@@ -3,24 +3,25 @@ import React, { Component } from "react";
 import Project from "./Project";
 import ReactCardFlip from "react-card-flip";
 
-import todo_list_img from "./pictures/todo_list.png";
-import recipes_finder_img from "./pictures/recipes_finder.png";
+import todo_list_img from "../pictures/todo_list.png";
+import recipes_finder_img from "../pictures/recipes_finder.png";
+import pathfinding_visualizer from "../pictures/pathfinding_visualizer.png";
+import sorting_visualizer from "../pictures/sorting_visualizer.png";
 
-import logo_css3 from "./logos/logo_css3.png";
-import logo_github from "./logos/logo_github.png";
-import logo_html5 from "./logos/logo_html5.png";
-import logo_javascript from "./logos/logo_javascript.png";
-import logo_materialize from "./logos/logo_materialize.png";
-import logo_nodejs from "./logos/logo_nodejs.png";
-import logo_react from "./logos/logo_react.png";
-import logo_mongodb from "./logos/logo_mongodb.png";
+import logo_css3 from "../logos/logo_css3.png";
+import logo_github from "../logos/logo_github.png";
+import logo_html5 from "../logos/logo_html5.png";
+import logo_javascript from "../logos/logo_javascript.png";
+import logo_nodejs from "../logos/logo_nodejs.png";
+import logo_react from "../logos/logo_react.png";
+import logo_mongodb from "../logos/logo_mongodb.png";
 
 class Projects extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isFlipped: [false, false],
-      projects_back_size: [250, 250, 250, 250]
+      projects_back_size: [100, 100, 100, 100]
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -39,11 +40,18 @@ class Projects extends Component {
     const flips_arr = this.state.isFlipped;
     flips_arr[index] = !flips_arr[index];
 
-    const arr = this.state.projects_back_size;
-
-    arr[index] =
+    const calcHeight =
       parseInt(document.getElementById(`project_${index}_front`).offsetHeight) -
       parseInt(this.convertRemToPixels(6));
+    const arr = this.state.projects_back_size;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 100) {
+        arr[i] = calcHeight;
+      }
+    }
+
+    arr[index] = calcHeight;
 
     if (arr[index] > 300) {
       this.setState(() => ({
@@ -58,22 +66,18 @@ class Projects extends Component {
   }
 
   getProjectsData() {
+    let idx = 0;
     const arr = [];
 
     arr.push({
-      index: 0,
-      title_front: "Todo List",
-      image: todo_list_img,
+      index: idx++,
+      title_front: "Pathfinding Visualizer",
+      image: pathfinding_visualizer,
       description:
-        "Quickly capture what’s on your mind and get a reminder later at the right place or time.",
+        "Demonstration of three algorithms for finding the shortest paths between nodes in a graph.",
       data: {
-        accomplishments: [
-          "User-friendly interface design.",
-          "Client-side rendering via AJAX.",
-          "Worked with MVC framework, Node.js Server",
-          "Saving Data to MongoDB Database from Node.js Application."
-        ],
-        logos: [logo_react, logo_nodejs, logo_mongodb, logo_github],
+        accomplishments: ["ADD", "ADD", "ADD", "ADD"],
+        logos: [logo_react, logo_javascript, logo_html5, logo_css3],
         url: {
           demo: "https://www.google.com",
           source_code: "https://www.walla.com"
@@ -82,19 +86,56 @@ class Projects extends Component {
     });
 
     arr.push({
-      index: 1,
+      index: idx++,
       title_front: "Recipes Finder",
       image: recipes_finder_img,
+      description:
+        "Recipes Finder finds amazing recipes you can make, right now. Start cooking now!",
+      data: {
+        accomplishments: [
+          "User-friendly interface design.",
+          "Client-side rendering via AJAX.",
+          "Worked with CSS Modules",
+          "Server-side integrated with RESTful API"
+        ],
+        logos: [logo_javascript, logo_css3, logo_react, logo_nodejs],
+        url: {
+          demo: "https://www.google.com",
+          source_code: "https://www.walla.com"
+        }
+      }
+    });
+
+    arr.push({
+      index: idx++,
+      title_front: "Sorting Visualizer",
+      image: sorting_visualizer,
+      description:
+        "Visualization Tool for Sorting Algorithms. Merge, Bubble and Selection sort.",
+      data: {
+        accomplishments: ["ADD", "ADD", "ADD", "ADD"],
+        logos: [logo_github, logo_javascript, logo_react, logo_html5],
+        url: {
+          demo: "https://www.google.com",
+          source_code: "https://www.walla.com"
+        }
+      }
+    });
+
+    arr.push({
+      index: idx++,
+      title_front: "Todo List",
+      image: todo_list_img,
       description:
         "Quickly capture what’s on your mind and get a reminder later at the right place or time.",
       data: {
         accomplishments: [
           "User-friendly interface design.",
-          "Client-side rendering via AJAX.",
+          "ADD ANOTHER PLUS",
           "Worked with MVC framework, Node.js Server",
           "Saving Data to MongoDB Database from Node.js Application."
         ],
-        logos: [logo_javascript, logo_css3, logo_react, logo_nodejs],
+        logos: [logo_react, logo_nodejs, logo_mongodb, logo_github],
         url: {
           demo: "https://www.google.com",
           source_code: "https://www.walla.com"
@@ -119,7 +160,7 @@ class Projects extends Component {
       >
         {projectsData.map((project, idx) => {
           return (
-            <div style={{ margin: "0rem auto" }}>
+            <div key={idx} style={{ margin: "0rem auto" }}>
               <ReactCardFlip
                 isFlipped={this.state.isFlipped[project.index]}
                 flipDirection="horizontal"

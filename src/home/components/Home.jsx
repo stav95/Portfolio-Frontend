@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import NavBar from "./NavBar";
 
 import $ from "jquery";
-import styles from "./home.module.css";
+import styles from "../css/home.module.css";
 import About from "./About";
 import Projects from "./Projects";
+import Skills from "./Skills";
+import Education from "./Education";
+import Army from "./Army";
 
 class Home extends Component {
   constructor(props) {
@@ -14,11 +17,30 @@ class Home extends Component {
 
   componentDidMount() {
     function currentSection(elem) {
-      return $(window).scrollTop() + 100 >= $(elem).offset().top;
+      if (
+        $(document).height() - document.body.scrollHeight - 100 <=
+        $(window).scrollTop()
+      ) {
+        return true;
+      } else {
+        return $(window).scrollTop() + 100 >= $(elem).offset().top;
+      }
+
+      // console.log(
+      //   `${$(window).scrollTop()}, ${$(elem).offset().top}, ${$(
+      //     document
+      //   ).height() - document.body.scrollHeight}`
+      // );
     }
 
     $(window).scroll(function() {
-      if (currentSection($("#skills"))) {
+      if (currentSection($("#contact"))) {
+        addActive(6);
+      } else if (currentSection($("#army"))) {
+        addActive(5);
+      } else if (currentSection($("#education"))) {
+        addActive(4);
+      } else if (currentSection($("#skills"))) {
         addActive(3);
       } else if (currentSection($("#projects"))) {
         addActive(2);
@@ -100,94 +122,42 @@ class Home extends Component {
               <span className={styles.section_display_text}>SKILLS</span>
             </div>
             <div className={styles.bg}>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
-              <div>ss</div>
+              <Skills></Skills>
+            </div>
+          </section>
+
+          <section id="education">
+            <div className={styles.section_display}>
+              <span className={styles.section_display_text}>EDUCATION</span>
+            </div>
+            <div className={styles.bg}>
+              <Education></Education>
+            </div>
+          </section>
+
+          <section id="army">
+            <div className={styles.section_display}>
+              <span className={styles.section_display_text}>ARMY SERVICE</span>
+            </div>
+            <div className={styles.bg}>
+              <Army></Army>
+            </div>
+          </section>
+
+          <section id="contact">
+            <div className={styles.section_display}>
+              <span className={styles.section_display_text}>CONTACT</span>
+            </div>
+            <div className={styles.bg}>
+              <div>
+                <div>s</div>
+                <div>s</div>
+                <div>s</div>
+                <div>s</div>
+                <div>s</div>
+                <div>s</div>
+                <div>s</div>
+              </div>
             </div>
           </section>
         </div>

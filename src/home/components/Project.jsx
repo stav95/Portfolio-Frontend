@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "./project.module.css";
+import styles from "../css/project.module.css";
 
 import Fab from "@material-ui/core/Fab";
 import { Tooltip } from "@material-ui/core/";
@@ -97,6 +97,7 @@ class Project extends Component {
               {this.state.data.accomplishments.map((acc, idx) => {
                 return (
                   <div
+                    key={idx}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -108,7 +109,8 @@ class Project extends Component {
                       style={{
                         marginLeft: "2rem",
                         marginRight: "0.5rem",
-                        color: "#008073"
+                        color: "#008073",
+                        marginBottom: "4px"
                       }}
                     >
                       done
@@ -126,6 +128,7 @@ class Project extends Component {
               {this.state.data.logos.map((logo, idx) => {
                 return (
                   <img
+                    key={idx}
                     src={logo}
                     style={{ maxHeight: "6rem", margin: "0.5rem 2.5rem" }}
                   />

@@ -7,7 +7,7 @@
 }
 
 .image_bg {
-  background-image: url("./my_image.jpg");
+  background-image: url("../pictures/my_image.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@
 }
 
 .bg {
-  background-image: url("./bg.png");
+  background-image: url("../pictures/bg.png");
   background-repeat: repeat;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import ToDoList from "./todo-list/ToDoList.jsx";
 import Recipe from "./recipe/Recipe.jsx";
-import Home from "./home/Home";
+import Home from "./home/components/Home";
 
 function App() {
   return (

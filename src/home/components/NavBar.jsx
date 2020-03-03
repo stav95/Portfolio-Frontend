@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "./nav_bar.module.css";
+import styles from "../css/nav_bar.module.css";
 import NavBarRow from "./NavBarRow";
 
 class NavBar extends Component {
