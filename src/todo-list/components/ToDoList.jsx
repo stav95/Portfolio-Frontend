@@ -3,14 +3,16 @@ import {
   addNewItem as API_addNewItem,
   deleteItem as API_deleteItem,
   changeCheckbox as API_changeCheckbox
-} from "./API";
+} from "../external/API";
 
 import React, { Component } from "react";
+
+import Fab from "@material-ui/core/Fab";
 import Checkbox from "@material-ui/core/Checkbox";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import styles from "./todo_list.module.css";
-import trash_64 from "./trash_64.png";
+import styles from "../css/todo_list.module.css";
+import trash_64 from "../pictures/trash_64.png";
 
 export default class ToDoList extends Component {
   constructor() {
@@ -68,8 +70,8 @@ export default class ToDoList extends Component {
     );
   }
 
-  handleChangeCheckbox(event) {
-    API_changeCheckbox(this.state.list_name, event.target.id, res =>
+  handleChangeCheckbox(item_id) {
+    API_changeCheckbox(this.state.list_name, item_id, res =>
       this.handleNewData(res)
     );
   }
@@ -89,38 +91,42 @@ export default class ToDoList extends Component {
 
     return (
       <div className={styles.page_bg}>
-        <div className={styles.box} id="heading">
-            <input
-              type="text"
-              className={[styles.input_text, styles.list_name].join(' ')}
-              name="new_item"
-              placeholder="Search (e.g Food)"
-              value={list_name}
-              autoComplete="off"
-              onChange={this.handleChangeListName}
-            />
+        <div className={styles.box_title} id="heading">
+          <input
+            type="text"
+            className={[styles.input_text, styles.list_name].join(" ")}
+            name="new_item"
+            placeholder="Search (e.g Food)"
+            value={list_name}
+            autoComplete="off"
+            onChange={this.handleChangeListName}
+          />
         </div>
-        <div className={styles.box}>
+        <div className={styles.box_list}>
           {list_items.map((item, idx) => (
             <div>
               <div className={styles.item}>
-                <MuiThemeProvider theme={theme}>
-                  <Checkbox
-                    id={item.item.id}
-                    onChange={this.handleChangeCheckbox}
-                    checked={item.item.completed}
-                    color="primary"
-                  ></Checkbox>
-                </MuiThemeProvider>
-                <p
-                  className={
-                    item.item.completed
-                      ? styles.completed
-                      : styles.not_completed
-                  }
+                <div
+                  style={{ display: "flex", cursor: "pointer" }}
+                  onClick={() => this.handleChangeCheckbox(item.item.id)}
                 >
-                  {item.item.value}
-                </p>
+                  <MuiThemeProvider theme={theme}>
+                    <Checkbox
+                      id={item.item.id}
+                      checked={item.item.completed}
+                      color="primary"
+                    ></Checkbox>
+                  </MuiThemeProvider>
+                  <p
+                    className={
+                      item.item.completed
+                        ? styles.completed
+                        : styles.not_completed
+                    }
+                  >
+                    {item.item.value}
+                  </p>
+                </div>
                 <div className={styles.img_wrapper}>
                   <img
                     src={trash_64}
@@ -141,9 +147,18 @@ export default class ToDoList extends Component {
               autoComplete="off"
               onChange={this.handleChangeAddItem}
             />
-            <button type="button" onClick={this.addNewItem}>
-              +
-            </button>
+
+            <MuiThemeProvider theme={theme}>
+              <Fab
+                color="primary"
+                onClick={this.addNewItem}
+                style={{ backgroundColor: "#a683e3" }}
+              >
+                <span class="material-icons" style={{ fontSize: "2rem" }}>
+                  add
+                </span>
+              </Fab>
+            </MuiThemeProvider>
           </div>
         </div>
       </div>

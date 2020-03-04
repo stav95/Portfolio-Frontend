@@ -7,7 +7,7 @@ class Education extends Component {
     super(props);
     this.state = {};
   }
-  
+
   render() {
     return (
       <div style={{ paddingBottom: "3rem" }}>
@@ -82,9 +82,8 @@ class Education extends Component {
           <div class="card-stacked">
             <div class="card-content">
               <div className={styles.card_subtitle}>Microsoft</div>
-
               <div className={styles.card_description}>
-                {this.getBSC_Row("Exam 70-483: Programming in C#.")}
+                {this.getBSC_Row("Exam 70-483: Programming in C#")}
               </div>
             </div>
           </div>

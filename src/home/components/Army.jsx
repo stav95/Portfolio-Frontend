@@ -10,33 +10,42 @@ class Army extends Component {
 
   render() {
     return (
-      <div style={{ paddingBottom: "3rem" }}>
-        {this.createBSC()}
-        {this.createCertification()}
-      </div>
+      <div style={{ paddingBottom: "3rem" }}>{this.createArmyService()}</div>
     );
   }
 
-  createBSC() {
+  createArmyService() {
     return (
       <div className={styles.card_container}>
         <div class="card horizontal" style={{ margin: "0" }}>
           <div className={styles.card_title}>
-            <div class="card-image">Bachelor of Science</div>
+            <div class="card-image">Field Intelligence Corps</div>
           </div>
           <div className={styles.title_border}></div>
           <div class="card-stacked">
             <div class="card-content">
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <div className={styles.card_subtitle}>
-                  Computer Science and Mathematics
-                </div>
-                <div style={{ fontSize: "1.25rem" }}>, Netanya</div>
-              </div>
+              <div className={styles.card_subtitle}>Core Service</div>
               <div className={styles.card_description}>
-                {this.getBSC_Row("Current Grades Average: 93.")}
-                {this.getBSC_Row("Honor & Award: Dean's list.")}
-                {this.getBSC_Row("Magna Cum Laude.")}
+                {this.getArmy_Row("Balloon Operator in an operational team.")}
+                {this.getArmy_Row(
+                  "Served in intelligence field expert positions."
+                )}
+                {this.getArmy_Row(
+                  "Demanded teamwork, responsibility and creativity."
+                )}
+              </div>
+            </div>
+
+            <div class="card-content" style={{ paddingTop: "0" }}>
+              <div className={styles.card_subtitle}>Commanding Positions</div>
+              <div className={styles.card_description}>
+                {this.getArmy_Row(
+                  "100 soldiers under my command and responsibility."
+                )}
+                {this.getArmy_Row(
+                  "Required passion, efficiency and collaborating."
+                )}
+                {this.getArmy_Row("Supported the Company commanding officer.")}
               </div>
             </div>
           </div>
@@ -45,7 +54,7 @@ class Army extends Component {
     );
   }
 
-  getBSC_Row(text) {
+  getArmy_Row(text) {
     return (
       <div style={{ display: "flex", alignItems: "center" }}>
         {this.getGradeIcon()}
@@ -67,28 +76,6 @@ class Army extends Component {
         }}
       >
         grade
-      </div>
-    );
-  }
-
-  createCertification() {
-    return (
-      <div className={styles.card_container}>
-        <div class="card horizontal" style={{ margin: "0" }}>
-          <div className={styles.card_title}>
-            <div class="card-image">Certification</div>
-          </div>
-          <div className={styles.title_border}></div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <div className={styles.card_subtitle}>Microsoft</div>
-
-              <div className={styles.card_description}>
-                {this.getBSC_Row("Exam 70-483: Programming in C#.")}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

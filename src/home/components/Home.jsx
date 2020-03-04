@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Education from "./Education";
 import Army from "./Army";
+import CreateContact from "./Contact";
 
 class Home extends Component {
   constructor(props) {
@@ -150,13 +151,7 @@ class Home extends Component {
             </div>
             <div className={styles.bg}>
               <div>
-                <div>s</div>
-                <div>s</div>
-                <div>s</div>
-                <div>s</div>
-                <div>s</div>
-                <div>s</div>
-                <div>s</div>
+                <CreateContact></CreateContact>
               </div>
             </div>
           </section>

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import styles from "./result_recipe.module.css";
-
 import "react-perfect-scrollbar/dist/css/styles.css";
-import PerfectScrollbar from "react-perfect-scrollbar";
+
+import styles from "../css/result_recipe.module.css";
 
 export default class ResultRecipe extends Component {
   constructor(props) {

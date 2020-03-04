@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "./row_result_recipe.module.css";
+import styles from "../css/row_result_recipe.module.css";
 
 export default class RowResultRecipe extends Component {
   constructor(props) {

@@ -1,16 +1,18 @@
 .input_search {
-  text-align: center;
-  border: none;
-  font-size: 1rem;
-  font-weight: 200;
-  width: 21.25rem;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  background: white;
+  text-align: center !important;
+  border: none !important;
+  font-size: 1rem !important;
+  font-weight: 200 !important;
+  width: 21.25rem !important;
+  height: inherit !important;
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+  border-bottom: 0 !important;
+  background-color: white !important;
 }
 
 .input_search:focus {
-  outline: none;
+  box-shadow: none !important;
 }
 
 ::placeholder {

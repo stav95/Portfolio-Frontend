@@ -1,15 +1,30 @@
 import React from "react";
-import "./App.css";
-import ToDoList from "./todo-list/ToDoList.jsx";
-import Recipe from "./recipe/Recipe.jsx";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import ToDoList from "./todo-list/components/ToDoList.jsx";
+import Recipe from "./recipe/components/Recipe.jsx";
 import Home from "./home/components/Home";
+
+import "./App.css";
 
 function App() {
   return (
     <div id="root" className="App">
-      {/* <Recipe></Recipe> */}
-      {/* <ToDoList></ToDoList> */}
-      <Home></Home>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/recipes">
+            <Recipe></Recipe>
+          </Route>
+          <Route exact path="/todo">
+            <ToDoList></ToDoList>
+          </Route>
+          <Route component={Home}></Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

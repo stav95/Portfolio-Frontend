@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import styles from "./recipe.module.css";
 import RecipeTopBar from "./RecipeTopBar";
 import RowResultRecipe from "./RowResultRecipe";
 import ResultRecipe from "./ResultRecipe";
@@ -10,6 +9,8 @@ import axios from "axios";
 
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
+
+import styles from "../css/recipe.module.css";
 
 export default class Recipe extends Component {
   constructor() {

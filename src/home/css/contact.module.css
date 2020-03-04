@@ -1,0 +1,90 @@
+.container {
+  width: fit-content;
+  height: calc(100vh - 6rem);
+  max-width: 48rem;
+  padding-top: 3rem;
+  margin-left: 8rem;
+  text-align: left;
+}
+
+.fab {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+.link {
+  font-size: 1.15rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+  color: #009688;
+  font-weight: 400;
+}
+
+.link:hover {
+  border-bottom: 3px solid #009688;
+}
+
+@media only screen and (min-width: 500px) {
+  .container {
+    margin-left: 4rem;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .container {
+    margin-left: 4.6rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    margin-left: 5.2rem;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .container {
+    margin-left: 5.8rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .container {
+    margin-left: 6.4rem;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .container {
+    margin-left: 7rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .container {
+    margin-left: 7.5rem;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .container {
+    margin-left: 8rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    margin-left: 8.5rem;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .container {
+    margin-left: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    margin-left: 10rem;
+  }
+}

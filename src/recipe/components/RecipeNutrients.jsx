@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "./recipe_nutrients.module.css";
+import styles from "../css/recipe_nutrients.module.css";
 
 export default class RecipeNutrients extends Component {
   constructor(props) {

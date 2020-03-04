@@ -76,11 +76,16 @@ class Projects extends Component {
       description:
         "Demonstration of three algorithms for finding the shortest paths between nodes in a graph.",
       data: {
-        accomplishments: ["ADD", "ADD", "ADD", "ADD"],
+        accomplishments: [
+          "Deep understanding in SPF algorithms.",
+          "Simplify big problems into small pieces.",
+          "CSS dynamic animation.",
+          "Imagination and creativity."
+        ],
         logos: [logo_react, logo_javascript, logo_html5, logo_css3],
         url: {
-          demo: "https://www.google.com",
-          source_code: "https://www.walla.com"
+          demo: "https://stav95.github.io/Pathfinding-Visualizer/",
+          source_code: "https://github.com/stav95/Pathfinding-Visualizer"
         }
       }
     });

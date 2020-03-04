@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-import styles from "./recipe_top_bar.module.css";
 import Search from "./Search";
-
 import ReactLoading from "react-loading";
 
-import chef_512 from "./chef_512.png";
+import styles from "../css/recipe_top_bar.module.css";
+import chef_512 from "../pictures/chef_512.png";
 
 export default class RecipeTopBar extends Component {
   constructor(props) {
@@ -20,10 +19,7 @@ export default class RecipeTopBar extends Component {
     return (
       <div className={styles.box}>
         <div className={styles.title_image_container}>
-          <img
-            src={chef_512}
-            style={{ height: "3rem", margin: "0rem 1rem"}}
-          />
+          <img src={chef_512} style={{ height: "3rem", margin: "0rem 1rem" }} />
           <div style={{ fontSize: "1.5rem", fontWeight: "500" }}>
             Recipes Finder
           </div>

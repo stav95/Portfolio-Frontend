@@ -1,9 +1,7 @@
 import axios from "axios";
 
-export default class API{
-    ddd(){
-
-    }
+export default class API {
+  ddd() {}
 }
 
 export const getList = (list_name, callback) => {
