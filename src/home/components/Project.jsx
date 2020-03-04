@@ -145,7 +145,13 @@ class Project extends Component {
                 style={{ textDecoration: "none" }}
               >
                 <Tooltip title="View Online" placement="top">
-                  <Fab color="primary" style={{ marginRight: "1.25rem" }}>
+                  <Fab
+                    color="primary"
+                    style={{
+                      marginRight: "1.25rem",
+                      backgroundColor: "#795548"
+                    }}
+                  >
                     <span class="material-icons">visibility</span>
                   </Fab>
                 </Tooltip>
@@ -157,7 +163,7 @@ class Project extends Component {
                 style={{ textDecoration: "none" }}
               >
                 <Tooltip title="View Source Code" placement="top">
-                  <Fab color="primary">
+                  <Fab color="primary" style={{ backgroundColor: "#795548" }}>
                     <span class="material-icons">code</span>
                   </Fab>
                 </Tooltip>

@@ -23,7 +23,7 @@ export default function CreateContact() {
             style={{ textDecoration: "none" }}
           >
             <Tooltip title="Email" placement="top">
-              <Fab color="primary">
+              <Fab color="primary" style={{ backgroundColor: "#795548" }}>
                 <span class="material-icons">mail</span>
               </Fab>
             </Tooltip>
@@ -43,7 +43,7 @@ export default function CreateContact() {
             style={{ textDecoration: "none" }}
           >
             <Tooltip title="View my Github page" placement="top">
-              <Fab color="primary">
+              <Fab color="primary"  style={{ backgroundColor: "#795548" }}>
                 <span class="material-icons">code</span>
               </Fab>
             </Tooltip>
@@ -63,7 +63,7 @@ export default function CreateContact() {
             style={{ textDecoration: "none" }}
           >
             <Tooltip title="Veiw my Linkedin page" placement="top">
-              <Fab color="primary">
+              <Fab color="primary"  style={{ backgroundColor: "#795548" }}>
                 <span class="material-icons">person</span>
               </Fab>
             </Tooltip>

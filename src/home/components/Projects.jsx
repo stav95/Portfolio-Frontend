@@ -105,7 +105,7 @@ class Projects extends Component {
         ],
         logos: [logo_javascript, logo_css3, logo_react, logo_nodejs],
         url: {
-          demo: "https://www.google.com",
+          demo: "/recipes",
           source_code: "https://www.walla.com"
         }
       }
@@ -118,11 +118,16 @@ class Projects extends Component {
       description:
         "Visualization Tool for Sorting Algorithms. Merge, Bubble and Selection sort.",
       data: {
-        accomplishments: ["ADD", "ADD", "ADD", "ADD"],
+        accomplishments: [
+          "Deep understanding in Sorting algorithms.",
+          "Clean and easy way to understand the process.",
+          "Dynamic animation speed by user's choice.",
+          "Hours of Fun!"
+        ],
         logos: [logo_github, logo_javascript, logo_react, logo_html5],
         url: {
-          demo: "https://www.google.com",
-          source_code: "https://www.walla.com"
+          demo: "https://stav95.github.io/Sorting-Visualizer/",
+          source_code: "https://github.com/stav95/Sorting-Visualizer"
         }
       }
     });
@@ -136,13 +141,13 @@ class Projects extends Component {
       data: {
         accomplishments: [
           "User-friendly interface design.",
-          "ADD ANOTHER PLUS",
-          "Worked with MVC framework, Node.js Server",
+          "Worked with MVC framework, Node.js Server.",
+          "Materialize CSS frontend & Material-ui Componets.",
           "Saving Data to MongoDB Database from Node.js Application."
         ],
         logos: [logo_react, logo_nodejs, logo_mongodb, logo_github],
         url: {
-          demo: "https://www.google.com",
+          demo: "/todo",
           source_code: "https://www.walla.com"
         }
       }
