@@ -42,7 +42,6 @@ A simple JavaScript utility for conditionally joining classNames together.
 
 * npm i react-router-dom
 
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <span class="material-icons">face</span>
 https://material.io/resources/icons/?style=baseline

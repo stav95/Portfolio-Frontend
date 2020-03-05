@@ -25,7 +25,16 @@ export const getList = (list_name, callback) => {
   const params = new URLSearchParams();
   params.append("list_name", list_name);
 
-  makeRequest("POST", "/todo-list", params, callback);
+  makeRequest("POST", "http://64.227.30.86:3001/todo-list", params, callback);
+
+  // const Http = new XMLHttpRequest();
+  // const url = "http://64.227.30.86:3001/todo-list";
+  // Http.open("POST", url);
+  // Http.send();
+
+  // Http.onreadystatechange = e => {
+  //   console.log(e);
+  // };
 };
 
 export const addNewItem = (list_name, new_item, callback) => {
