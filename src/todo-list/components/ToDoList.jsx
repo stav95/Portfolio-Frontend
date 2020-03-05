@@ -52,7 +52,7 @@ export default class ToDoList extends Component {
 
   handleNewData(res) {
     console.log("handleNewData - " + res);
-
+    console.log(JSON.stringify(res));
     if (res && res.data && res.data !== "") {
       this.setState({
         list_items: res.data.list_items

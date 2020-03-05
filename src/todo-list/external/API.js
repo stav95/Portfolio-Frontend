@@ -5,10 +5,27 @@ export default class API {
 }
 
 export const getList = (list_name, callback) => {
-  const params = new URLSearchParams();
-  params.append("list_name", list_name);
+  console.log("testtttt");
+  axios({
+    method: "POST",
+    url: "/todo-list",
+    data: {
+      list_name: "s"
+    }
+  })
+    .then(res => {
+      console.log("RES - " + res);
+      callback(res);
+    })
+    .catch(err => {
+      console.log("ERR - " + err);
+      callback(err);
+    });
 
-  makeRequest("POST", "/todo-list", params, callback);
+  // const params = new URLSearchParams();
+  // params.append("list_name", list_name);
+
+  // makeRequest("POST", "/todo-list", params, callback);
 };
 
 export const addNewItem = (list_name, new_item, callback) => {
