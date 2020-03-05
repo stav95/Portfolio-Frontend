@@ -25,7 +25,7 @@ export const getList = (list_name, callback) => {
   const params = new URLSearchParams();
   params.append("list_name", list_name);
 
-  makeRequest("POST", "http://64.227.30.86:3001/todo-list", params, callback);
+  makeRequest("POST", "/todo-list", params, callback);
 
   // const Http = new XMLHttpRequest();
   // const url = "http://64.227.30.86:3001/todo-list";
@@ -64,7 +64,7 @@ export const changeCheckbox = (list_name, item_id, callback) => {
 function makeRequest(method, url, params, callback) {
   axios({
     method: method,
-    url: url,
+    url: `http://64.227.30.86:3001/${url}`,
     data: params
   })
     .then(res => {
