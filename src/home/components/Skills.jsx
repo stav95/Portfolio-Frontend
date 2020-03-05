@@ -23,6 +23,7 @@ import logo_mysql from "../logos/logo_mysql.svg";
 import logo_charp from "../logos/logo_csharp.jpg";
 import logo_python from "../logos/logo_python.png";
 import logo_github from "../logos/logo_github.png";
+import logo_selenium from "../logos/logo_selenium.png";
 
 class Skills extends Component {
   constructor(props) {
@@ -135,8 +136,8 @@ class Skills extends Component {
           title: "Python"
         },
         {
-          img: logo_github,
-          title: "Github"
+          img: logo_selenium,
+          title: "Selenium"
         }
       ]
     });

@@ -1,3 +1,11 @@
+git clone https://github.com/stav95/Portfolio-Backend.git
+git clone https://github.com/stav95/Portfolio-Frontend.git
+
+
+pm2 start "serve -s build -l 80"
+"proxy": "http://157.245.131.186:3000/",
+
+
 Initialize git on GitHub:
     git init
     git commit -m "Your comment"

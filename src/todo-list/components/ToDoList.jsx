@@ -32,22 +32,27 @@ export default class ToDoList extends Component {
   }
 
   getList() {
+    console.log("getList - " + this.state.list_name);
     API_getList(this.state.list_name, res => this.handleNewData(res));
   }
 
   addNewItem() {
+    console.log("addNewItem");
     API_addNewItem(this.state.list_name, this.state.new_item, res =>
       this.handleNewData(res)
     );
   }
 
   deleteItem(item_id) {
+    console.log("deleteItem - " + item_id);
     API_deleteItem(this.state.list_name, item_id, res =>
       this.handleNewData(res)
     );
   }
 
   handleNewData(res) {
+    console.log("handleNewData - " + res);
+
     if (res && res.data && res.data !== "") {
       this.setState({
         list_items: res.data.list_items
@@ -56,12 +61,14 @@ export default class ToDoList extends Component {
   }
 
   handleChangeAddItem(event) {
+    console.log("handleChangeAddItem - " + event.target.value);
     this.setState({
       new_item: event.target.value
     });
   }
 
   handleChangeListName(event) {
+    console.log("handleChangeListName - " + event.target.value);
     this.setState(
       {
         list_name: event.target.value
@@ -71,6 +78,7 @@ export default class ToDoList extends Component {
   }
 
   handleChangeCheckbox(item_id) {
+    console.log("handleChangeCheckbox - " + item_id);
     API_changeCheckbox(this.state.list_name, item_id, res =>
       this.handleNewData(res)
     );
