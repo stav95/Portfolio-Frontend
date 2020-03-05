@@ -5,36 +5,10 @@ export default class API {
 }
 
 export const getList = (list_name, callback) => {
-  console.log("testtttt");
-  // axios({
-  //   method: "POST",
-  //   url: "/todo-list",
-  //   data: {
-  //     list_name: "s"
-  //   }
-  // })
-  //   .then(res => {
-  //     console.log("RES - " + res);
-  //     callback(res);
-  //   })
-  //   .catch(err => {
-  //     console.log("ERR - " + err);
-  //     callback(err);
-  //   });
-
   const params = new URLSearchParams();
   params.append("list_name", list_name);
 
   makeRequest("POST", "/todo-list", params, callback);
-
-  // const Http = new XMLHttpRequest();
-  // const url = "http://64.227.30.86:3001/todo-list";
-  // Http.open("POST", url);
-  // Http.send();
-
-  // Http.onreadystatechange = e => {
-  //   console.log(e);
-  // };
 };
 
 export const addNewItem = (list_name, new_item, callback) => {
@@ -64,7 +38,7 @@ export const changeCheckbox = (list_name, item_id, callback) => {
 function makeRequest(method, url, params, callback) {
   axios({
     method: method,
-    url: `http://64.227.30.86:3001/${url}`,
+    url: `http://64.227.30.86:3001${url}`,
     data: params
   })
     .then(res => {

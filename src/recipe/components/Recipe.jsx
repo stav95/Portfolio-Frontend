@@ -33,7 +33,8 @@ export default class Recipe extends Component {
 
     axios({
       method: "POST",
-      url: "/recipe-finder",
+      url: 'http://64.227.30.86:3001/recipe-finder',
+      url: "/",
       data: params
     })
       .then(result => {
