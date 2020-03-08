@@ -106,7 +106,7 @@ class Projects extends Component {
         logos: [logo_javascript, logo_css3, logo_react, logo_nodejs],
         url: {
           demo: "/recipes",
-          source_code: "https://www.walla.com"
+          source_code: "https://github.com/stav95/Portfolio-Frontend/tree/master/src/recipe"
         }
       }
     });
@@ -148,7 +148,7 @@ class Projects extends Component {
         logos: [logo_react, logo_nodejs, logo_mongodb, logo_github],
         url: {
           demo: "/todo",
-          source_code: "https://www.walla.com"
+          source_code: "https://github.com/stav95/Portfolio-Frontend/tree/master/src/todo-list"
         }
       }
     });

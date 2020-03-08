@@ -1,6 +1,21 @@
 git clone https://github.com/stav95/Portfolio-Backend.git
+
+----------------
+rm -r Portfolio-Frontend
 git clone https://github.com/stav95/Portfolio-Frontend.git
 
+
+cp uF2 Portfolio-Frontend/uF
+chmod +x Portfolio-Frontend/uF
+----------------
+npm install pm2 -g
+npm install
+
+npm run build
+
+
+???? sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+----------------
 
 pm2 start "serve -s build -l 80"
 "proxy": "http://157.245.131.186:3000/",
