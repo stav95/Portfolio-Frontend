@@ -5,6 +5,7 @@ import styles from "../css/project.module.css";
 import Fab from "@material-ui/core/Fab";
 import { Tooltip } from "@material-ui/core/";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { sendLog } from "../external/API";
 
 class Project extends Component {
   constructor(props) {
@@ -139,10 +140,12 @@ class Project extends Component {
           <div className={styles.links_container}>
             <MuiThemeProvider theme={theme}>
               <a
-                // TODO: Change link
                 href={this.state.data.url.demo}
                 target="_blank"
                 style={{ textDecoration: "none" }}
+                onClick={() =>
+                  sendLog("Open Demo: " + this.state.data.url.demo)
+                }
               >
                 <Tooltip title="View Online" placement="top">
                   <Fab
@@ -157,10 +160,14 @@ class Project extends Component {
                 </Tooltip>
               </a>
               <a
-                // TODO: Change link
                 href={this.state.data.url.source_code}
                 target="_blank"
                 style={{ textDecoration: "none" }}
+                onClick={() =>
+                  sendLog(
+                    "Open Source Code: " + this.state.data.url.source_code
+                  )
+                }
               >
                 <Tooltip title="View Source Code" placement="top">
                   <Fab color="primary" style={{ backgroundColor: "#795548" }}>

@@ -5,6 +5,7 @@ import { Tooltip } from "@material-ui/core/";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import styles from "../css/contact.module.css";
+import { sendLog } from "../external/API";
 
 export default function CreateContact() {
   const theme = createMuiTheme({
@@ -21,6 +22,7 @@ export default function CreateContact() {
           <a
             href="mailto:stav.dev95@gmail.com"
             style={{ textDecoration: "none" }}
+            onClick={() => sendLog("Clicked on Email")}
           >
             <Tooltip title="Email" placement="top">
               <Fab color="primary" style={{ backgroundColor: "#795548" }}>
@@ -32,6 +34,7 @@ export default function CreateContact() {
             href="mailto:stav.dev95@gmail.com"
             target="_blank"
             className={styles.link}
+            onClick={() => sendLog("Clicked on Email")}
           >
             <div>stav.dev95@gmail.com</div>
           </a>
@@ -41,9 +44,10 @@ export default function CreateContact() {
             href="https://github.com/stav95"
             target="_blank"
             style={{ textDecoration: "none" }}
+            onClick={() => sendLog("Clicked on Github")}
           >
             <Tooltip title="View my Github page" placement="top">
-              <Fab color="primary"  style={{ backgroundColor: "#795548" }}>
+              <Fab color="primary" style={{ backgroundColor: "#795548" }}>
                 <span class="material-icons">code</span>
               </Fab>
             </Tooltip>
@@ -52,6 +56,7 @@ export default function CreateContact() {
             href="https://github.com/stav95"
             target="_blank"
             className={styles.link}
+            onClick={() => sendLog("Clicked on Github")}
           >
             <div>github.com/stav95</div>
           </a>
@@ -61,9 +66,10 @@ export default function CreateContact() {
             href="https://il.linkedin.com/in/stav-yosef-229177169"
             target="_blank"
             style={{ textDecoration: "none" }}
+            onClick={() => sendLog("Clicked on Linkedin page")}
           >
             <Tooltip title="Veiw my Linkedin page" placement="top">
-              <Fab color="primary"  style={{ backgroundColor: "#795548" }}>
+              <Fab color="primary" style={{ backgroundColor: "#795548" }}>
                 <span class="material-icons">person</span>
               </Fab>
             </Tooltip>
@@ -72,6 +78,7 @@ export default function CreateContact() {
             href="https://il.linkedin.com/in/stav-yosef-229177169"
             target="_blank"
             className={styles.link}
+            onClick={() => sendLog("Clicked on Linkedin page")}
           >
             <div>linkedin.com/in/stav-yosef-229177169</div>
           </a>

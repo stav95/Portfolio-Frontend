@@ -9,6 +9,7 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Army from "./Army";
 import CreateContact from "./Contact";
+import { sendLog } from "../external/API";
 
 class Home extends Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    sendLog("Load Home");
+
     function currentSection(elem) {
       if (
         $(document).height() - document.body.scrollHeight - 100 <=
@@ -26,12 +29,6 @@ class Home extends Component {
       } else {
         return $(window).scrollTop() + 100 >= $(elem).offset().top;
       }
-
-      // console.log(
-      //   `${$(window).scrollTop()}, ${$(elem).offset().top}, ${$(
-      //     document
-      //   ).height() - document.body.scrollHeight}`
-      // );
     }
 
     $(window).scroll(function() {

@@ -8,6 +8,7 @@ class NavBarRow extends Component {
     this.state = {
       id: props.id,
       section: props.section,
+      target: props.target,
       image: props.image,
       text: props.text,
       color: props.color
@@ -22,6 +23,7 @@ class NavBarRow extends Component {
     return (
       <a
         href={this.state.section}
+        target={this.state.target}
         style={{ textDecoration: "none", color: "black" }}
       >
         <div id={this.state.id} className={styles.container}>

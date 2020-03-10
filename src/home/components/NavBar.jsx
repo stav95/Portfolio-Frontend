@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import styles from "../css/nav_bar.module.css";
 import NavBarRow from "./NavBarRow";
+import { sendLog } from "../external/API";
 
 class NavBar extends Component {
   constructor(props) {
@@ -63,7 +64,8 @@ class NavBar extends Component {
         ></NavBarRow>
         <NavBarRow
           id="row_7"
-          section="#resume"
+          section="/Stav_Yosef_CV.pdf"
+          target="_blank"
           image="description"
           text="Resume"
           color="#666666"
