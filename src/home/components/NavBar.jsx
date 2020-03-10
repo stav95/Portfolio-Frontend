@@ -62,14 +62,16 @@ class NavBar extends Component {
           text="Contact"
           color="#F44336"
         ></NavBarRow>
-        <NavBarRow
-          id="row_7"
-          section="/Stav_Yosef_CV.pdf"
-          target="_blank"
-          image="description"
-          text="Resume"
-          color="#666666"
-        ></NavBarRow>
+        <div onClick={() => sendLog("Open Resume")}>
+          <NavBarRow
+            id="row_7"
+            section="/Stav_Yosef_CV.pdf"
+            target="_blank"
+            image="description"
+            text="Resume"
+            color="#666666"
+          ></NavBarRow>
+        </div>
       </div>
     );
   }
