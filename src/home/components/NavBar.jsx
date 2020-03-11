@@ -7,7 +7,9 @@ import { sendLog } from "../external/API";
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      client: props.client
+    };
   }
   render() {
     return (
@@ -62,7 +64,7 @@ class NavBar extends Component {
           text="Contact"
           color="#F44336"
         ></NavBarRow>
-        <div onClick={() => sendLog("Open Resume")}>
+        <div onClick={() => sendLog(this.state.client, "Open Resume")}>
           <NavBarRow
             id="row_7"
             section="/Stav_Yosef_CV.pdf"

@@ -10,15 +10,33 @@ import Education from "./Education";
 import Army from "./Army";
 import CreateContact from "./Contact";
 import { sendLog } from "../external/API";
+import axios from "axios";
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { client: null };
+  }
+
+  getClientIP() {
+    axios
+      .get("http://geoip-db.com/json/")
+      .then(res => {
+        this.setState({
+          client: res.data
+        });
+
+        sendLog(res.data, "Load Home");
+      })
+      .catch(err => {
+        console.log("ERRRROR - " + err);
+        sendLog(this.state.client, "Load Home");
+      });
   }
 
   componentDidMount() {
-    sendLog("Load Home");
+    console.log(process.env.NODE_ENV);
+    this.getClientIP();
 
     function currentSection(elem) {
       if (
@@ -72,7 +90,7 @@ class Home extends Component {
         }}
       >
         <div className={styles.nav_bar}>
-          <NavBar></NavBar>
+          <NavBar client={this.state.client}></NavBar>
         </div>
         <div className={styles.active}></div>
         <div
@@ -111,7 +129,7 @@ class Home extends Component {
               <span className={styles.section_display_text}>PROJECTS</span>
             </div>
             <div className={styles.bg}>
-              <Projects></Projects>
+              <Projects client={this.state.client}></Projects>
             </div>
           </section>
 
@@ -148,7 +166,7 @@ class Home extends Component {
             </div>
             <div className={styles.bg}>
               <div>
-                <CreateContact></CreateContact>
+                <CreateContact client={this.state.client}></CreateContact>
               </div>
             </div>
           </section>

@@ -21,7 +21,8 @@ class Projects extends Component {
     super(props);
     this.state = {
       isFlipped: [false, false],
-      projects_back_size: [100, 100, 100, 100]
+      projects_back_size: [100, 100, 100, 100],
+      client: props.client
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -106,7 +107,8 @@ class Projects extends Component {
         logos: [logo_javascript, logo_css3, logo_react, logo_nodejs],
         url: {
           demo: "/recipes",
-          source_code: "https://github.com/stav95/Portfolio-Frontend/tree/master/src/recipe"
+          source_code:
+            "https://github.com/stav95/Portfolio-Frontend/tree/master/src/recipe"
         }
       }
     });
@@ -148,7 +150,8 @@ class Projects extends Component {
         logos: [logo_react, logo_nodejs, logo_mongodb, logo_github],
         url: {
           demo: "/todo",
-          source_code: "https://github.com/stav95/Portfolio-Frontend/tree/master/src/todo-list"
+          source_code:
+            "https://github.com/stav95/Portfolio-Frontend/tree/master/src/todo-list"
         }
       }
     });
@@ -183,6 +186,7 @@ class Projects extends Component {
                   image={project.image}
                   description={project.description}
                   onClick={event => this.handleClick(event, project.index)}
+                  client={this.state.client}
                 ></Project>
 
                 <Project
@@ -191,6 +195,7 @@ class Projects extends Component {
                   widthCard="30rem"
                   data={project.data}
                   onClick={event => this.handleClick(event, project.index)}
+                  client={this.state.client}
                 ></Project>
               </ReactCardFlip>
             </div>

@@ -1,11 +1,12 @@
 import axios from "axios";
 
-function sendLog(action) {
-  const ip = "64.227.30.86";
-  //   const ip = "localhost";
+function sendLog(client, action) {
+  const ip =
+    process.env.NODE_ENV === "development" ? "localhost" : "64.227.30.86";
   const port = 3001;
 
   const params = new URLSearchParams();
+  params.append("client", JSON.stringify(client));
   params.append("action", action);
 
   axios({

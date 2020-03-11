@@ -19,7 +19,8 @@ class Project extends Component {
       image: props.image,
       description: props.description,
       data: props.data,
-      onClick: props.onClick
+      onClick: props.onClick,
+      client: props.client
     };
 
     this.getFrontCard = this.getFrontCard.bind(this);
@@ -144,7 +145,10 @@ class Project extends Component {
                 target="_blank"
                 style={{ textDecoration: "none" }}
                 onClick={() =>
-                  sendLog("Open Demo: " + this.state.data.url.demo)
+                  sendLog(
+                    this.state.client,
+                    "Open Demo: " + this.state.data.url.demo
+                  )
                 }
               >
                 <Tooltip title="View Online" placement="top">
@@ -165,6 +169,7 @@ class Project extends Component {
                 style={{ textDecoration: "none" }}
                 onClick={() =>
                   sendLog(
+                    this.state.client,
                     "Open Source Code: " + this.state.data.url.source_code
                   )
                 }
