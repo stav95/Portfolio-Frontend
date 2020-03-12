@@ -11,8 +11,7 @@ class About extends Component {
     return (
       <div className={styles.about_text_container}>
         <div className={styles.flow_text}>
-          Passionate and motivated Computer Science and Mathematics student (3rd
-          year) seeking an entry-level software development engineering
+          Passionate and motivated Computer Science and Mathematics developer seeking an entry-level software development engineering
           position.
         </div>
         <div className={styles.flow_text} style={{ paddingTop: "1.5rem" }}>
