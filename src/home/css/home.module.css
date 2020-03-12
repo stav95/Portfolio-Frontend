@@ -62,13 +62,26 @@
   cursor: default;
 }
 
-.active {
+/* .active {
   background-color: #fafafa;
   padding-left: 2rem;
   opacity: 1;
   border-left: 3px solid black;
   font-weight: 500;
   cursor: pointer;
+} */
+
+.container {
+  position: absolute;
+  height: 100%;
+  /* transition: left 2s ease-in, width 2s ease-in; */
+}
+
+.container_with_nav {
+  /* left: 12rem; */
+  transform: translateX(12rem);
+  width: calc(100% - 12rem);
+  transition: left 2s ease-in, width 2s ease-in;
 }
 
 .bg {

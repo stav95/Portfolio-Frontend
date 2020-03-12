@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import axios from "axios";
+import cn from "classnames";
+import $ from "jquery";
+
 import NavBar from "./NavBar";
 
-import $ from "jquery";
 import styles from "../css/home.module.css";
 import About from "./About";
 import Projects from "./Projects";
@@ -10,12 +13,17 @@ import Education from "./Education";
 import Army from "./Army";
 import CreateContact from "./Contact";
 import { sendLog } from "../external/API";
-import axios from "axios";
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { client: null };
+    this.state = {
+      client: null,
+      width: 0,
+      height: 0
+    };
+
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   getClientIP() {
@@ -35,6 +43,9 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+
     console.log(process.env.NODE_ENV);
     this.getClientIP();
 
@@ -80,7 +91,21 @@ class Home extends Component {
     }
   }
 
+  updateWindowDimensions() {
+    this.setState(
+      {
+        width: window.innerWidth,
+        height: window.innerHeight
+      },
+      () => {
+        console.log(this.state.width + " - " + this.state.height);
+      }
+    );
+  }
+
   render() {
+    let maxWidth = 900;
+
     return (
       <div
         style={{
@@ -90,16 +115,17 @@ class Home extends Component {
         }}
       >
         <div className={styles.nav_bar}>
-          <NavBar client={this.state.client}></NavBar>
+          <NavBar
+            client={this.state.client}
+            display={this.state.width > maxWidth ? true : false}
+          ></NavBar>
         </div>
-        <div className={styles.active}></div>
+        {/* <div className={styles.active}></div> */}
         <div
-          style={{
-            position: "absolute",
-            left: "12rem",
-            height: "100%",
-            width: "calc(100% - 12rem)"
-          }}
+          className={cn(
+            styles.container,
+            this.state.width > maxWidth ? styles.container_with_nav : ""
+          )}
         >
           <section id="intro" className={styles.image_bg}>
             <div className={styles.overlay}></div>

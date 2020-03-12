@@ -8,12 +8,21 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      client: props.client
+      client: props.client,
+      display: props.display
     };
   }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("!! - " + JSON.stringify(nextProps));
+    this.setState({
+      display: nextProps.display
+    });
+  }
+
   render() {
     return (
-      <div className={styles.test}>
+      <div className={!this.state.display ? styles.test : ""}>
         <a href="#intro" style={{ textDecoration: "none", color: "black" }}>
           <div className={styles.name_container}>
             <div className={styles.name_text}>Stav</div>
