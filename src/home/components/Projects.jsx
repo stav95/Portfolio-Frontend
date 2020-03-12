@@ -29,6 +29,12 @@ class Projects extends Component {
     this.getProjectsData = this.getProjectsData.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      client: nextProps.client
+    });
+  }
+
   convertRemToPixels(rem) {
     return (
       rem * parseFloat(getComputedStyle(document.documentElement).fontSize)

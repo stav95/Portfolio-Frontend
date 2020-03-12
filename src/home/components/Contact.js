@@ -8,8 +8,8 @@ import styles from "../css/contact.module.css";
 import { sendLog } from "../external/API";
 
 export default function CreateContact(props) {
-  let client = props.data;
-  
+  let client = props.client;
+  console.log(JSON.stringify(props));
   const theme = createMuiTheme({
     palette: {
       primary: { main: "#795548" /*purple[500]*/ } // Purple and green play nicely together.

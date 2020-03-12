@@ -28,7 +28,10 @@ class Project extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ height: nextProps.height });
+    this.setState({
+      height: nextProps.height,
+      client: nextProps.client
+    });
   }
 
   getFrontCard() {

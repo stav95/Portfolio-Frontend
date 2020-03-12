@@ -104,6 +104,7 @@ class Home extends Component {
   }
 
   render() {
+    console.log(JSON.stringify(this.state.client));
     let maxWidth = 900;
 
     return (
@@ -192,7 +193,9 @@ class Home extends Component {
             </div>
             <div className={styles.bg}>
               <div>
-                <CreateContact client={this.state.client}></CreateContact>
+                <CreateContact
+                  client={this.state.client}
+                ></CreateContact>
               </div>
             </div>
           </section>
