@@ -115,6 +115,17 @@ class Home extends Component {
           fontWeight: 300
         }}
       >
+        <div
+          className={styles.open_menu}
+          style={{
+            visibility: this.state.width > maxWidth ? "hidden" : "visible"
+          }}
+        >
+          <span class="material-icons" style={{ fontSize: "4rem" }}>
+            reorder
+          </span>
+        </div>
+
         <div className={styles.nav_bar}>
           <NavBar
             client={this.state.client}
@@ -193,9 +204,7 @@ class Home extends Component {
             </div>
             <div className={styles.bg}>
               <div>
-                <CreateContact
-                  client={this.state.client}
-                ></CreateContact>
+                <CreateContact client={this.state.client}></CreateContact>
               </div>
             </div>
           </section>
