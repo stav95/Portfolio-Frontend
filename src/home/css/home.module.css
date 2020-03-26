@@ -1,4 +1,4 @@
-.open_menu{
+.open_menu {
   position: fixed;
   top: 0.5rem;
   left: 1rem;
@@ -8,10 +8,12 @@
 
 .nav_bar {
   position: fixed;
+  background-color: white;
   width: 12rem;
   height: 100%;
   border-collapse: collapse;
   border-right: 1px solid #dddddd;
+  z-index: -1;
 }
 
 .image_bg {
@@ -70,19 +72,9 @@
   cursor: default;
 }
 
-/* .active {
-  background-color: #fafafa;
-  padding-left: 2rem;
-  opacity: 1;
-  border-left: 3px solid black;
-  font-weight: 500;
-  cursor: pointer;
-} */
-
 .container {
   position: absolute;
   height: 100%;
-  /* transition: left 2s ease-in, width 2s ease-in; */
 }
 
 .container_with_nav {
@@ -107,79 +99,9 @@
   line-height: 1.75;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (max-width: 900px) {
   .about_text_container {
-    margin-left: 4rem;
-  }
-  .flow_text {
-    font-size: 1.34rem;
-  }
-}
-
-@media only screen and (min-width: 550px) {
-  .about_text_container {
-    margin-left: 4.6rem;
-  }
-  .flow_text {
-    font-size: 1.381rem;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .about_text_container {
-    margin-left: 5.2rem;
-  }
-  .flow_text {
-    font-size: 1.422rem;
-  }
-}
-
-@media only screen and (min-width: 650px) {
-  .about_text_container {
-    margin-left: 5.8rem;
-  }
-  .flow_text {
-    font-size: 1.463rem;
-  }
-}
-@media only screen and (min-width: 700px) {
-  .about_text_container {
-    margin-left: 6.4rem;
-  }
-  .flow_text {
-    font-size: 1.504rem;
-  }
-}
-@media only screen and (min-width: 750px) {
-  .about_text_container {
-    margin-left: 7rem;
-  }
-  .flow_text {
-    font-size: 1.545rem;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .about_text_container {
-    margin-left: 7.5rem;
-  }
-  .flow_text {
-    font-size: 1.586rem;
-  }
-}
-
-@media only screen and (min-width: 850px) {
-  .about_text_container {
-    margin-left: 8rem;
-  }
-  .flow_text {
-    font-size: 1.627rem;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .about_text_container {
-    margin-left: 8.5rem;
+    margin: auto;
   }
   .flow_text {
     font-size: 1.668rem;

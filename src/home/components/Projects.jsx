@@ -36,9 +36,11 @@ class Projects extends Component {
   }
 
   convertRemToPixels(rem) {
-    return (
-      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const element_font_size = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
     );
+    // return element_font_size - ((window.devicePixelRatio - 1) * 4);
+    return rem * element_font_size;
   }
 
   handleClick(e, index) {
@@ -47,8 +49,11 @@ class Projects extends Component {
     const flips_arr = this.state.isFlipped;
     flips_arr[index] = !flips_arr[index];
 
+    const project_front = document.getElementById(`project_${index}_front`);
+
+    // 6 = element's padding (top and bottom)
     const calcHeight =
-      parseInt(document.getElementById(`project_${index}_front`).offsetHeight) -
+      parseInt(project_front.offsetHeight) -
       parseInt(this.convertRemToPixels(6));
     const arr = this.state.projects_back_size;
 
@@ -129,8 +134,7 @@ class Projects extends Component {
         accomplishments: [
           "Deep understanding in Sorting algorithms.",
           "Clean and easy way to understand the process.",
-          "Dynamic animation speed by user's choice.",
-          "Hours of Fun!"
+          "Dynamic animation speed by user's choice."
         ],
         logos: [logo_github, logo_javascript, logo_react, logo_html5],
         url: {
@@ -148,10 +152,9 @@ class Projects extends Component {
         "Quickly capture what’s on your mind and get a reminder later at the right place or time.",
       data: {
         accomplishments: [
-          "User-friendly interface design.",
           "Worked with MVC framework, Node.js Server.",
           "Materialize CSS frontend & Material-ui Componets.",
-          "Saving Data to MongoDB Database from Node.js Application."
+          "Saving Data to MongoDB Database."
         ],
         logos: [logo_react, logo_nodejs, logo_mongodb, logo_github],
         url: {

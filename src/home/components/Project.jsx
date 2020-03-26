@@ -69,6 +69,8 @@ class Project extends Component {
   }
 
   getBackCard() {
+    // const max_logo_size_rem = 5 - ((window.devicePixelRatio - 1));
+
     const theme = createMuiTheme({
       palette: {
         primary: { main: "#795548" /*purple[500]*/ } // Purple and green play nicely together.
@@ -132,11 +134,7 @@ class Project extends Component {
             >
               {this.state.data.logos.map((logo, idx) => {
                 return (
-                  <img
-                    key={idx}
-                    src={logo}
-                    style={{ maxHeight: "6rem", margin: "0.5rem 2.5rem" }}
-                  />
+                  <img key={idx} src={logo} className={styles.card_logo} />
                 );
               })}
             </div>

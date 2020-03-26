@@ -104,8 +104,16 @@ class Home extends Component {
   }
 
   render() {
-    console.log(JSON.stringify(this.state.client));
-    let maxWidth = 900;
+    const maxWidth = 900;
+    let open_menu_visibility =
+      this.state.width > maxWidth ? "hidden" : "visible";
+
+    const home_nav_bar = document.getElementById("home_nav_bar");
+
+    if (home_nav_bar != null) {
+      open_menu_visibility =
+        home_nav_bar.style.zIndex == "1" ? "hidden" : open_menu_visibility;
+    }
 
     return (
       <div
@@ -118,21 +126,21 @@ class Home extends Component {
         <div
           className={styles.open_menu}
           style={{
-            visibility: this.state.width > maxWidth ? "hidden" : "visible"
+            visibility: open_menu_visibility
           }}
+          onClick={() =>
+            (document.getElementById("home_nav_bar").style.zIndex = "1")
+          }
         >
           <span class="material-icons" style={{ fontSize: "4rem" }}>
             reorder
           </span>
         </div>
 
-        <div className={styles.nav_bar}>
-          <NavBar
-            client={this.state.client}
-            display={this.state.width > maxWidth ? true : false}
-          ></NavBar>
+        <div id="home_nav_bar" className={styles.nav_bar}>
+          <NavBar client={this.state.client}></NavBar>
         </div>
-        {/* <div className={styles.active}></div> */}
+
         <div
           className={cn(
             styles.container,

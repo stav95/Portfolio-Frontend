@@ -29,9 +29,8 @@ class Education extends Component {
             <div class="card-content">
               <div style={{ display: "flex", alignItems: "center" }}>
                 <div className={styles.card_subtitle}>
-                  Computer Science and Mathematics
+                  Computer Science and Mathematics, Netanya
                 </div>
-                <div style={{ fontSize: "1.25rem" }}>, Netanya</div>
               </div>
               <div className={styles.card_description}>
                 {this.getBSC_Row("Current Grades Average: 93.")}
