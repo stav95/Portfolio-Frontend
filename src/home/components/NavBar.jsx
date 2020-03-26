@@ -13,9 +13,6 @@ class NavBar extends Component {
   }
 
   render() {
-    const maxWidth = 900;
-    console.log(this.state.client);
-
     return (
       <div>
         <div
@@ -27,9 +24,11 @@ class NavBar extends Component {
             zIndex: 1,
             visibility: "hidden"
           }}
-          onClick={() =>
-            (document.getElementById("home_nav_bar").style.zIndex = 0)
-          }
+          onClick={() => {
+            document.getElementById("home_nav_bar").style.visibility = "hidden";
+            document.getElementById("close_nav_bar").style.visibility =
+              "hidden";
+          }}
         >
           <span
             class="material-icons"

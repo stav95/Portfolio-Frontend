@@ -13,11 +13,12 @@
   height: 100%;
   border-collapse: collapse;
   border-right: 1px solid #dddddd;
-  z-index: -1;
+  z-index: 1;
+  visibility: visible;
 }
 
 .image_bg {
-  background-image: url("../pictures/my_image2.jpg");
+  background-image: url("../pictures/my_image3.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,20 +101,32 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .nav_bar {
+    visibility: hidden;
+  }
+
   .about_text_container {
     margin: auto;
   }
   .flow_text {
-    font-size: 1.668rem;
+    font-size: 1.25rem;
+  }
+
+  .quote_container {
+    margin-top: 2rem;
+  }
+
+  .quote_container .text {
+    font-size: 2.5rem;
   }
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 901px) {
   .about_text_container {
     margin-left: 9rem;
   }
   .flow_text {
-    font-size: 1.709rem;
+    font-size: 1.7rem;
   }
 }
 

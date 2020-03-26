@@ -113,7 +113,7 @@ class Home extends Component {
 
     if (home_nav_bar != null) {
       open_menu_visibility =
-        home_nav_bar.style.zIndex == "1" ? "hidden" : open_menu_visibility;
+      home_nav_bar.style.visibility == "visible" ? "hidden" : open_menu_visibility;
     }
 
     return (
@@ -130,7 +130,7 @@ class Home extends Component {
             visibility: open_menu_visibility
           }}
           onClick={() => {
-            document.getElementById("home_nav_bar").style.zIndex = "1";
+            document.getElementById("home_nav_bar").style.visibility = "visible";
             document.getElementById("close_nav_bar").style.visibility =
               "visible";
           }}
