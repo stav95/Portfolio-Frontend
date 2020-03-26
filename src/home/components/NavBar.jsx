@@ -8,21 +8,36 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      client: props.client//,
-      // display: props.display
+      client: props.client
     };
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   console.log("!! - " + JSON.stringify(nextProps));
-  //   this.setState({
-  //     display: nextProps.display
-  //   });
-  // }
-
   render() {
+    const maxWidth = 900;
+    console.log(this.state.client);
+
     return (
       <div>
+        <div
+          id="close_nav_bar"
+          style={{
+            position: "absolute",
+            right: "0.5rem",
+            top: "0.5rem",
+            zIndex: 1,
+            visibility: "hidden"
+          }}
+          onClick={() =>
+            (document.getElementById("home_nav_bar").style.zIndex = 0)
+          }
+        >
+          <span
+            class="material-icons"
+            style={{ fontSize: "2rem", opacity: "0.6" }}
+          >
+            clear
+          </span>
+        </div>
         <a href="#intro" style={{ textDecoration: "none", color: "black" }}>
           <div className={styles.name_container}>
             <div className={styles.name_text}>Stav</div>

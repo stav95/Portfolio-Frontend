@@ -105,6 +105,7 @@ class Home extends Component {
 
   render() {
     const maxWidth = 900;
+
     let open_menu_visibility =
       this.state.width > maxWidth ? "hidden" : "visible";
 
@@ -128,9 +129,11 @@ class Home extends Component {
           style={{
             visibility: open_menu_visibility
           }}
-          onClick={() =>
-            (document.getElementById("home_nav_bar").style.zIndex = "1")
-          }
+          onClick={() => {
+            document.getElementById("home_nav_bar").style.zIndex = "1";
+            document.getElementById("close_nav_bar").style.visibility =
+              "visible";
+          }}
         >
           <span class="material-icons" style={{ fontSize: "4rem" }}>
             reorder
