@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Skill from "./Skill";
 
+import logo_oop from "../logos/logo_oop.png";
+import logo_algo_design from "../logos/logo_algo_design.png";
+import logo_ds from "../logos/logo_ds.png";
+
 import logo_css3 from "../logos/logo_css3.png";
 import logo_materialize from "../logos/logo_materialize.png";
 import logo_bootstrap from "../logos/logo_bootstrap.png";
@@ -35,21 +39,39 @@ class Skills extends Component {
     const arr = [];
 
     arr.push({
+      title: "Fundamentals",
+      data: [
+        {
+          img: logo_oop,
+          title: "Object-Oriented Programming",
+        },
+        {
+          img: logo_algo_design,
+          title: "Algorithm Design",
+        },
+        {
+          img: logo_ds,
+          title: "Data Structures",
+        },
+      ],
+    });
+
+    arr.push({
       title: "HTML",
       data: [
         {
           img: logo_html5,
-          title: "HTML5"
+          title: "HTML5",
         },
         {
           img: logo_react,
-          title: "JSX"
+          title: "JSX",
         },
         {
           img: logo_ejs,
-          title: "EJS"
-        }
-      ]
+          title: "EJS",
+        },
+      ],
     });
 
     arr.push({
@@ -57,17 +79,17 @@ class Skills extends Component {
       data: [
         {
           img: logo_css3,
-          title: "CSS"
+          title: "CSS",
         },
         {
           img: logo_materialize,
-          title: "Materialize"
+          title: "Materialize",
         },
         {
           img: logo_bootstrap,
-          title: "Bootstrap"
-        }
-      ]
+          title: "Bootstrap",
+        },
+      ],
     });
 
     arr.push({
@@ -75,17 +97,17 @@ class Skills extends Component {
       data: [
         {
           img: logo_javascript,
-          title: "Javascript"
+          title: "Javascript",
         },
         {
           img: logo_react,
-          title: "React"
+          title: "React",
         },
         {
           img: logo_redux,
-          title: "Redux"
-        }
-      ]
+          title: "Redux",
+        },
+      ],
     });
 
     arr.push({
@@ -93,17 +115,17 @@ class Skills extends Component {
       data: [
         {
           img: logo_nodejs,
-          title: "Node.js"
+          title: "Node.js",
         },
         {
           img: logo_mongodb,
-          title: "MongoDB"
+          title: "MongoDB",
         },
         {
           img: logo_mysql,
-          title: "MySQL"
-        }
-      ]
+          title: "MySQL",
+        },
+      ],
     });
 
     arr.push({
@@ -111,17 +133,17 @@ class Skills extends Component {
       data: [
         {
           img: logo_material_ui,
-          title: "Material-UI"
+          title: "Material-UI",
         },
         {
           img: logo_express,
-          title: "Express"
+          title: "Express",
         },
         {
           img: logo_flask,
-          title: "Flask"
-        }
-      ]
+          title: "Flask",
+        },
+      ],
     });
 
     arr.push({
@@ -129,17 +151,17 @@ class Skills extends Component {
       data: [
         {
           img: logo_charp,
-          title: "C#"
+          title: "C#",
         },
         {
           img: logo_python,
-          title: "Python"
+          title: "Python",
         },
         {
           img: logo_selenium,
-          title: "Selenium"
-        }
-      ]
+          title: "Selenium",
+        },
+      ],
     });
 
     return arr;
